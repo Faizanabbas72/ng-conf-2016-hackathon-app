@@ -19,22 +19,72 @@
   <!-- 2. Configure SystemJS -->
   <script>
     System.config({
-            packages: {
-                "dist": {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('dist/bootstrap')
-                .then(null, console.error.bind(console));
+      packages: {
+        "dist": {
+          format: 'register',
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('dist/bootstrap')
+      .then(null, console.error.bind(console));
   </script>
+
+  <!-- 3. Add custom styles -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0; /* Light gray background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    app {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 8px;
+      background: white; /* White background for the app */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px; /* Limit max width for larger screens */
+    }
+
+    h1 {
+      margin: 0;
+      color: #007BFF; /* Bootstrap primary color */
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px; /* Smaller heading for mobile */
+      }
+      p {
+        font-size: 14px; /* Smaller paragraph text for mobile */
+      }
+    }
+  </style>
 </head>
 
-<!-- 3. Display the application -->
-
 <body>
-  <app>Loading...</app>
+  <app>
+    <h1>Loading...</h1>
+    <p>Please wait while the application is loading...</p>
+  </app>
 </body>
 
 </html>
